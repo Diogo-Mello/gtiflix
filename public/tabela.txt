@@ -1,0 +1,34 @@
+FILMES
+- nome
+- lancamento
+- diretor (relacionamento)
+- produtora (relacionamento)
+- nacionalidade (ralaciomento)
+- classificacao
+- descricao
+- tempo
+- poster
+- capa
+
+DIRETOR
+- nome
+- foto
+- descricao
+- nascimento
+- nacionalidade (relacionamento)
+
+GENERO
+- nome
+
+ATORES
+- nome
+- foto
+- descricao
+- nascimento
+- nacionalidade (relacionamento)
+
+PRODUTORAS
+- nome
+
+NACIONALIDADE
+- nome
