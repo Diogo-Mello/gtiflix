@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('classificacao')->nullable();
             $table->time('duracao')->nullable();
             $table->text('descricao')->nullable();
-            $table->string('poster');
-            $table->string('capa');
+            $table->string('poster')->nullable();
+            $table->string('capa')->nullable();
 
             $table->foreignId('diretor_id')->constrained('diretores', 'id')->nullable();
             $table->foreignId('produtora_id')->constrained()->nullable();
