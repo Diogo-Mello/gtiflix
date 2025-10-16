@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Filme;
+use App\Models\Genero;
 
 Route::get('/', function () {
     return view('welcome');
@@ -8,11 +10,8 @@ Route::get('/', function () {
 
 Route::view('/about', 'sobre');
 
-Route::get('/diogo', function() {
-    echo 'Oi Diogo, lindão :)';
-});
 
-Route::get('/filmes/{filme}', function($filme) {
-    echo 'Oi Diogo, ve esse filme aqui bb :) <br> '.$filme.' gostou?';
-    echo '<script>alert("oi bb")</script>';
+Route::get('/lista-filmes', function() {
+    $filmes = Filme::all();
+    return view('lista-filmes', compact('filmes'));
 });
