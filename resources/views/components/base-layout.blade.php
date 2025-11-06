@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIT-Flix</title>
     @vite('resources/css/app.css')
-
+  <style>
+    body {
+      background-color: #191919 !important;
+    }
+  </style>
 </head>
 <body>
     <!-- ========== HEADER ========== -->
