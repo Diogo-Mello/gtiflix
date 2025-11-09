@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Ator extends Model
 {
     protected $table = 'atores';
+
+    public function nacionalidade()
+    {
+        return $this->belongsTo(Nacionalidade::class);
+    }
 }

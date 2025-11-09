@@ -24,22 +24,22 @@ class AtorSeeder extends Seeder
                 [
                     'nome' => "Daniel Radcliffe",
                     'descricao' => "Expecto Patronum",
-                    'nacionalidade' => 2
+                    'nacionalidade' => 3
                 ],
                 [
                     'nome' => "Margot Robbie",
                     'descricao' => "Eu sou a Barbie Girl",
-                    'nacionalidade_id' => 2
+                    'nacionalidade_id' => 4
                 ],
                 [
                     'nome' => "Eddie Murphy",
                     'descricao' => "A gente já chegou?",
-                    'nacionalidade_id' => 2
+                    'nacionalidade_id' => 1
                 ],
                 [
                     'nome' => "Adam Sandler",
                     'descricao' => "Adam Sandler",
-                    'nacionalidade_id' => 2
+                    'nacionalidade_id' => 1
                 ]
                 ]
         );

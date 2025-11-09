@@ -1,44 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Filme;
-use App\Models\Genero;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FilmeController;
+use App\Http\Controllers\DiretorController;
+use App\Http\Controllers\AtorController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::redirect('/', '/login');
 
-Route::view('/login', 'login')->name('login');
-
-Route::post('logar', function(Request $request) {
-
-    $credentials = $request->validate([
-        'email' => ['required', 'email'],
-        'password' => ['required'],
-    ]);
-
-    if (Auth::attempt($credentials)) {
-        $request->session()->regenerate();
-
-        $filmes = Filme::all();
-        return view('lista-filmes', compact('filmes'));
-    }
-
-    return back()->withErrors([
-        'email' => 'The provided credentials do not match our records.',
-    ])->onlyInput('email');
-
-})->name('logar');
-
-Route::get('/', function() {
-    $filmes = Filme::all();
-    return view('lista-filmes', compact('filmes'));
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
+    Route::post('/logar', [LoginController::class, 'logar'])->name('logar');
 });
 
-Route::get('/detalhes-filme/{filme}',
-    function(Filme $filme) {
-        return view('detalhes-filme', compact('filme'));
-})->name('detalhes-filme');
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/lista-filmes', [FilmeController::class, 'index'])->name('lista-filmes');
+    Route::get('/detalhes-filme/{filme}', [FilmeController::class, 'detalhes'])->name('detalhes-filme');
+
+    Route::get('/diretores', [DiretorController::class, 'index'])->name('diretores');
+
+    Route::get('/atores', [AtorController::class, 'index'])->name('atores');
+});
