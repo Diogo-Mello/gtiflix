@@ -18,17 +18,20 @@ class DiretorSeeder extends Seeder
                 [
                     'nome' => "Martin Scorsese",
                     'descricao' => "Absolute Saynema",
-                    'nacionalidade_id' => 2
+                    'nacionalidade_id' => 2,
+                    'nascimento' => '1942-11-17'
                 ],
                 [
                     'nome' => "Todd Philipps",
                     'descricao' => "Fez Se Beber Não Case",
-                    'nacionalidade' => 3
+                    'nacionalidade' => 3,
+                    'nascimento' => '1970-12-20'
                 ],
                 [
                     'nome' => "Steven Spielberg",
                     'descricao' => "O maior diretor de todos os tempos",
-                    'nacionalidade_id' => 1
+                    'nacionalidade_id' => 1,
+                    'nascimento' => '1946-12-18'
                 ]
             ]
         );

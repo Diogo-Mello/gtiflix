@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function showLogin()
     {
-        return view('login');
+        return view('pages.login.login');
     }
 
     public function logar(Request $request)
@@ -21,7 +21,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('lista-filmes');
+            return redirect()->route('filmes');
         }
 
         return back()->withErrors([

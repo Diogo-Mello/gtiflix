@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('produtoras', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 255);
+            $table->string('descricao', 255)->nullable();
+            $table->foreignId('nacionalidade_id')->constrained()->nullable();
             $table->timestamps();
         });
     }
